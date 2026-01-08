@@ -76,19 +76,6 @@ public class Alumno {
         this.ciclo = ciclo;
     }
     
-    /*Metodos*/
-    
-    public void anhadirNota(double nota){ //autobocing en java, transforma en Double
-        this.notasCurso.add(nota);
-    
-    }
-    
-    @Override
-    public String toString(){
-        return  "Alumno: "+this.nombre+"\n"+
-                "DNI: "+this.dni+"\n"+
-                "Nota: "+this.notasCurso+"\n";
-    }
 
     /**
      * @return the edad
@@ -102,5 +89,24 @@ public class Alumno {
      */
     public void setEdad(int edad) {
         this.edad = edad;
+    }
+    
+        /*Metodos*/
+    
+    public void anhadirNota(double nota){ //autobocing en java, transforma en Double
+        this.notasCurso.add(nota);
+    
+    }
+    
+    public boolean esMayorEdad(){
+        return this.edad >= 18;
+    }
+    
+    @Override
+    public String toString(){
+        return  "Alumno: "+this.nombre+"\n"+
+                "DNI: "+this.dni+"\n"+
+                "Edad: "+this.edad+"\n"+
+                "Nota: "+this.notasCurso+"\n";
     }
 }
