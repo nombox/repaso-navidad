@@ -24,10 +24,11 @@ public class Alumno {
     
     /*Construcctores*/
     
-    public Alumno(String dni, String nombre){
+    public Alumno(String dni, String nombre, int edad){
     
         this.dni = dni;
         this.nombre = nombre;
+        this.edad = edad;
     }
     
     public Alumno(){
@@ -93,7 +94,7 @@ public class Alumno {
     
         /*Metodos*/
     
-    public void anhadirNota(double nota){ //autobocing en java, transforma en Double
+    public void anhadirNota(double nota){ //autoboxing en java, transforma en Double
         this.notasCurso.add(nota);
     
     }

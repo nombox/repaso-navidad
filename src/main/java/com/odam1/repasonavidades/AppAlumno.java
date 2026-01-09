@@ -29,7 +29,7 @@ public class AppAlumno {
         alumno1.setCiclo(CicloFP.DAW);
         
         //Usando un constructor
-        Alumno alumno2 = new Alumno("12345679P", "Juan");
+        Alumno alumno2 = new Alumno("12345679P", "Juan", 23);
         alumno2.setCiclo(CicloFP.DAM);
         
         System.out.println("Centro al que pertenece el alumno2: "+ Alumno.getCentro());
@@ -52,6 +52,8 @@ public class AppAlumno {
             decision = entradaTeclado.next().toUpperCase();
         }while(!decision.equals("S"));
         
+        
+        
         /*Mini reto: añadir un atributo edad, un método esMayordeEdad, 
         y crear un arrayList de usuarios a partir de los datos indicados por el usuario,
         y mostrar los datos de los alumnos mayores de edad*/
@@ -67,11 +69,50 @@ public class AppAlumno {
         
         //Se crea el ArrayList
         ArrayList<Alumno> listaAlumnos = new ArrayList<>();
+        decision = "";
         
         do{
+        String dni;
+        String nombre;
+        int edad;
+        int ciclo;
         
         
-        }while();
+            System.out.println("Ingresa el nombre del alumno");
+            nombre = entradaTeclado.next();
+            
+            System.out.println("Ingresa el dni del alumno");
+            dni = entradaTeclado.next();
+            
+            System.out.println("Ingresa la edad del alumno");
+            edad = entradaTeclado.nextInt();
+            
+            Alumno alumno = new Alumno(dni, nombre, edad);
+            
+            System.out.println("Define su ciclo: 1 DAM o 2 DAW");
+            ciclo = entradaTeclado.nextInt();
+            switch(ciclo){
+                case 1 ->{
+                    alumno.setCiclo(CicloFP.DAM);
+                }
+                case 2 ->{
+                    alumno.setCiclo(CicloFP.DAW);
+                }
+            }
+            
+            listaAlumnos.add(alumno);
+        
+             System.out.println("Quieres Terminar de agregar usuarios?(S/N)");
+            decision = entradaTeclado.next().toUpperCase();
+        }while(!decision.equals("S"));
+        
+        System.out.println("Los alumnos mayores de edad son");
+        for(Alumno alumno: listaAlumnos){
+            if(alumno.esMayorEdad()){
+                System.out.println(alumno);
+            }
+        }
+        
     }
     
 }
